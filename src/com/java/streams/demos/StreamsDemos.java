@@ -2,9 +2,12 @@ package com.java.streams.demos;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -104,6 +107,28 @@ public class StreamsDemos {
   	Employee e = employeeList.stream().max((e1,e2)-> e1.age.compareTo(e2.age)).get();
   	System.out.println(e);
   	
+  	System.out.println("====================Second largest number from an arrayList-I========================================================");
+    // Second largest number from an arrayList
+  	List<Integer> integers = Arrays.asList(1,2,10,4,5,6,3,8,9,24);
+  	Integer largestInteger = integers.stream().max((x1,x2)-> x1.compareTo(x2)).get();
+  	System.out.println("Largest Integer "+largestInteger);
+  	Integer secondLargestInteger = integers.stream().filter(x -> x < largestInteger).max((x1,x2)-> x1.compareTo(x2)).get();
+	System.out.println("Second Largest Integer "+secondLargestInteger);
+	
+	System.out.println("====================Second largest number from an arrayList - II========================================================");
+	
+	Optional<Integer> secondLargestInt = integers.stream().sorted((x1,x2)-> -x1.compareTo(x2)).limit(2).skip(1).findFirst();
+	System.out.println(secondLargestInt);
+	
+	System.out.println("====================Second largest number from an arrayList - III========================================================");
+    List<Integer>  newList1 = integers.stream().sorted().collect(Collectors.toList());
+	int j = Collections.max(newList1);
+    newList1.remove(newList1.indexOf(j));
+    int i = Collections.max(newList1);
+    System.out.println(i);
+    
+    
+    
 }
 	
 	

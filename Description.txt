@@ -1,0 +1,27 @@
+
+** map() vs flatMap **
+
+Java8 Stream API provides map and flatMap. 
+Both these methods are intermediate methods and return another stream as a part of output.
+
+map() -> map() method is use for transformation.
+         map() takes the stream of data as input then it transform the data and return another stream as a output.
+         at high level  Stream<R> map (Stream<T> input){}
+         It processes stream of values
+         It does only mapping (transformation)
+         Its  mapper function produces a single value for each input value.
+         It is a One to One mapping
+         Use this function when the mapper function produces a single value for each input value.
+         
+
+flatMap() -> flatMap is use for transformation + flattening. (flatMap = map() + flattening)
+             It processes stream of stream of values
+             It does mapping (transformation) + flattening
+             Its mapper produces multiple values for each input value.
+             It is a One to many mapping
+             Use this function when the mapper function produces multiple values for each input value.
+             
+             
+
+
+
