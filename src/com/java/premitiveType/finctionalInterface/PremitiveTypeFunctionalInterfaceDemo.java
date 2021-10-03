@@ -10,8 +10,8 @@ public class PremitiveTypeFunctionalInterfaceDemo {
 		IntPredicate p = i -> i % 2 == 0; // Advantage of using IntPredicate is no Auto boxing or Auto Unboking is
 											// happening so better performance
 											// Similarly we have primitive versions of predefine functional interfaces:
-											// LongPredicate, DoublePredicate, LongPredicate ,ToIntFunction,
-											// ToIntFunction, IntToDoubleFunction
+											// LongPredicate, DoublePredicate, LongPredicate ,
+											// ToIntFunction, IntToDoubleFunction etc
 
 		for (int x1 : x) {
 			if (p.test(x1)) {
